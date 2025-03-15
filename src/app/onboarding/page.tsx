@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { useUser } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation'
-import { completeOnboarding } from './_actions'
+// import { completeOnboarding } from './_actions'
 
 export default function OnboardingComponent() {
   const [error, setError] = React.useState('')
@@ -11,15 +11,13 @@ export default function OnboardingComponent() {
   const router = useRouter()
 
   const handleSubmit = async (formData: FormData) => {
-    const res = await completeOnboarding(formData)
-    if (res?.message) {
-      // Reloads the user's data from the Clerk API
-      await user?.reload()
-      router.push('/')
-    }
-    if (res?.error) {
-      setError(res?.error)
-    }
+    // const res = await completeOnboarding(formData)
+    // if (res?.message) {
+    //   router.push('/');
+    // }
+    // if (res?.error) {
+    //   setError(res?.error)
+    // }
   }
   return (
     <div>
